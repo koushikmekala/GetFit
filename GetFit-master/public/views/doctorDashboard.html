@@ -1,0 +1,83 @@
+<h3>Doctor Dashboard</h3>
+<div class="container">
+    <div class="row">
+        <div class="col col-md-11 col-lg-11 col-sm-11 card ">
+            <h4><strong>Today's Appointments</strong></h4>
+            <br><br>
+            <div class="row">
+                <div class="col col-md-6 col-lg-6 col-sm-6 border-right">
+                    <center>
+                        <h5><strong>{{todayMonth}}</strong></h5>
+                        <h2><strong>{{todayDate}}</strong></h2>
+                        <h5><strong>{{todayDay}}</strong></h5>
+                    </center>
+                </div>
+                <div class="col col-md-6 col-lg-6 col-sm-6">
+                    <center class="patients"> Patients
+                        <ul ng-if="todayAppointment != '' ">
+                            <li ng-repeat="today in todayAppointment" class="pdng-top"><a ng-href="/viewPatientData/{{today.email}}">{{today.fullname | uppercase}}</a></li>
+                        </ul>
+                        <p ng-if="todayAppointment == '' " class="pdng-top"><strong>No Appointments for Today</strong></p>
+                    </center>
+                </div>
+
+            </div>
+            <br><br>
+            <center><a href="/viewAllAppointments"><button class="btn btn-primary">View All Appointments</button></a>
+
+        </div>
+        <!--<div class="col col-md-4 col-lg-4 sm-6 card card-margin">
+            HighChart to view Last weeks appointments
+        </div>-->
+    </div>
+
+
+    <div class="row">
+        <div class="col col-md-6 col-lg-6 col-sm-11 col-xs-11 card ">
+            <h4><strong>Upcoming Appointments</strong></h4>
+            <br>
+            <div class="row">
+                <div class="col">
+
+                    <table class="tableCustom" ng-if="upcomingAppointment != '' ">
+                        <tr>
+                            <th>Patient</th>
+                            <th>Reason</th>
+                            <th>Date</th>
+                        </tr>
+                        <tr ng-repeat="appointment in upcomingAppointment">
+                            <td><a ng-href="/viewPatientData/{{appointment.email}}">{{appointment.fullname}}</a></td>
+                            <td>{{appointment.reason}}</td>
+                            <td>{{appointment.date}}</td>
+                        </tr>
+                    </table>
+                    <center><p ng-if="upcomingAppointment == '' " class="pdng-top"><strong>No Upcoming Appointments for you</strong></p></center>
+
+                </div>
+
+            </div>
+            <br><br>
+            <center><a href="/viewAllAppointments"><button class="btn btn-primary">View Upcoming Appointments</button></a>
+
+        </div>
+        <div class="col col-md-5 col-lg-5 col-sm-11 col-xs-11 card ">
+            <h4><strong>Previous Appointments</strong></h4>
+            <br>
+            <table class="tableCustom" ng-if="previousAppointment != '' ">
+                <tr>
+                    <th>Appintment Id</th>
+                    <th>Reason</th>
+                    <th>Date</th>
+                </tr>
+                <tr ng-repeat="appointment in previousAppointment">
+                    <td><a ng-href="/viewAppointment/{{appointment.email}}/{{appointment.aid}}">{{appointment.aid}}</a></td>
+                    <td>{{appointment.fullname}}</td>
+                    <td>{{appointment.date}}</td>
+                </tr>
+            </table>
+            <hr>
+            <center><p ng-if="previousAppointment == '' " class="pdng-top"><strong>No Previous Appointments for you</strong></p></center>
+            <center><a href="/viewAllAppointments"><button class="btn btn-primary">View All Previous Appointments</button></a>
+        </div>
+    </div>
+</div>

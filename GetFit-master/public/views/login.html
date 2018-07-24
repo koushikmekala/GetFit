@@ -1,0 +1,24 @@
+<div class="row card card-margin  col-sm-9">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1><img src="../images/icons/user.png" height="50" width="50"> Login</h1>
+
+        <!-- LOGIN FORM -->
+        <form ng-submit="ctrl.login()">
+            <div class="form-group">
+                <label><strong>Email</strong></label>
+                <input type="email" ng-model="ctrl.email" name="email" id="username" class="form-control input-lg" placeholder="Email Address"
+                    required>
+            </div>
+            <div class="form-group">
+                <label><strong>Password</strong></label>
+                <input type="password" ng-model="ctrl.password" name="password" id="password" class="form-control input-lg" placeholder="Password"
+                    required>
+            </div>
+            <button type="submit" id="submit" class="btn btn-info btn-lg">Login</button>
+        </form>
+        <hr>
+        <div class="alert alert-danger" ng-if="error">{{error}}</div>
+        <p>Need an account? <a  class="btn btn-link" href="/signup">Signup</a></p>
+        <p>Not a User? Go to Doctor Login <a  class="btn btn-link" href="/doctorLogin">Doctor</a></p>
+    </div>
+</div>

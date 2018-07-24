@@ -1,0 +1,65 @@
+<h3>Health Data of {{name}}</h3>
+<div class="col col-lg-10 col-md-10 col-sm-10">
+        <div class="card card-margin" style="min-width: 300px; height: 425px; margin: 0 auto">
+                    <h4><strong>Health Data</strong></h4>
+        <button class="btn btn-info" style="float:right;" ng-click="edit()" >Edit</button>
+        <br>
+        <div class="row">
+            <div class="col card-data-padding">
+                <form ng-if="health != '' ">
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Chest Pain Type</label>
+                        <div class="col-sm-1">
+                            <p ng-if="health['0'].chest_pain_type == '1'" class="form-control-static">Typical Angina</p>
+                            <p ng-if="health['0'].chest_pain_type == '2'" class="form-control-static">Atypical Angina</p>
+                            <p ng-if="health['0'].chest_pain_type == '3'" class="form-control-static">Non-anginal Pain</p>
+                            <p ng-if="health['0'].chest_pain_type == '4'" class="form-control-static">Asymptotic</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Resting Blood Pressure</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].resting_bp}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Serum Cholestrol</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].cholestrol}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Fasting blood sugar(>120mg/dl)</label>
+                        <div class="col-sm-1">
+                            <p ng-if="health['0'].blood_sugar == '0'" class="form-control-static">No</p>
+                            <p ng-if="health['0'].blood_sugar == '1'" class="form-control-static">Yes</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">ECG</label>
+                        <div class="col-sm-1">
+                            <p ng-if="health['0'].ecg == '0'" class="form-control-static">Normal</p>
+                            <p ng-if="health['0'].ecg == '1'" class="form-control-static">Abnormal</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Max Heart Rate</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].max_heart_rate}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">ST Depression</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].induced_angina}}</p>
+                        </div>
+                    </div>
+                </form>
+                <center>
+                    <p ng-if="health == '' " class="pdng-top"><strong>No Health Data present for this user</strong></p>
+                </center>
+            </div>
+
+        </div>
+        </div>
+    </div>

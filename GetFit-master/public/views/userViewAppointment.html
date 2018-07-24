@@ -1,0 +1,50 @@
+<h3><strong>Appointment #{{appointmentDetails["0"].aid}}</strong></h3>
+<hr>
+<div class="row top-space">
+    <div class="card card-margin col-lg-5 col-md-5 col-sm-8">
+        <h4><strong><img src="../images/icons/appointment.png" height="50" width="50"> Appointment Details</strong></h4>
+        <br>
+        <div class="row" ng-if="appointmentDetails != '' ">
+            <div class="col card-data-padding">
+                <p><strong>Doctor: </strong> Dr. {{appointmentDetails["0"].dFullname}}</p>
+                <p><strong>Date</strong> : {{appointmentDetails["0"].date}} </p>
+                <p><strong>Reason </strong> : {{appointmentDetails["0"].reason}}</p>
+                <p><strong>Allergies</strong> : {{appointmentDetails["0"].allergies}}</p>
+                <p><strong>Previous Stroke</strong> : {{appointmentDetails["0"].stroke}}</p>
+                <p><strong>Current Medicine</strong> : {{appointmentDetails["0"].currentMedicine}}</p>
+            </div>
+        </div>
+        <center>
+            <p ng-if="appointmentDetails == '' " class="pdng-top"><strong>No Appointments for you</strong></p>
+        </center>
+
+    </div>
+    <div class="card card-margin col-lg-5 col-md-5 col-sm-8">
+        <h4><strong><img src="../images/icons/doctorfeedback.png" height="50" width="50"> Doctor Feedback</strong></h4>
+        <br>
+        <div ng-show="!success">
+            <div class="row" ng-if="aidFeedback != '' ">
+                <div class="col card-data-padding">
+                    <p><strong>Steps </strong> {{aidFeedback["0"].dSteps}}</p>
+                    <p><strong>Calories</strong> : {{aidFeedback["0"].dCalories}} </p>
+                    <p><strong>Distance </strong> : {{aidFeedback["0"].dDistance}}</p>
+                    <p><strong>Active Minutes</strong> : {{aidFeedback["0"].dActiveminutes}}</p>
+                    <p><strong>Feedback</strong> : {{aidFeedback["0"].feedback}}</p>
+                    <center>
+                        <buton class="btn btn-success" ng-click="updateGoals()">Update Goals</buton>
+                    </center>
+                </div>
+            </div>
+            <center>
+                <p ng-if="aidFeedback == '' " class="pdng-top"><strong>No Doctor Feedback for this Appointment</strong></p>
+            </center>
+        </div>
+        <div ng-show="success">
+            <center>
+                <p style="color:green;"><strong>{{successText}}</strong></p>
+                <button class="btn btn-success" ng-click="viewGoals()">View my Goals</button>
+            </center>
+        </div>
+
+    </div>
+</div>

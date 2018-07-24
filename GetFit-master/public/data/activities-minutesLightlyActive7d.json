@@ -1,0 +1,32 @@
+{
+  "activities-minutesLightlyActive": [
+    {
+      "dateTime": "2017-04-27",
+      "value": "383"
+    },
+    {
+      "dateTime": "2017-04-28",
+      "value": "364"
+    },
+    {
+      "dateTime": "2017-04-29",
+      "value": "383"
+    },
+    {
+      "dateTime": "2017-04-30",
+      "value": "278"
+    },
+    {
+      "dateTime": "2017-05-01",
+      "value": "380"
+    },
+    {
+      "dateTime": "2017-05-02",
+      "value": "13"
+    },
+    {
+      "dateTime": "2017-05-03",
+      "value": "0"
+    }
+  ]
+}

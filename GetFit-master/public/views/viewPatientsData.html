@@ -1,0 +1,182 @@
+<h3>Details of {{currentAppointment["0"].fullname | uppercase}}</h3>
+<hr>
+
+<h4>Today's Activity</h4>
+<br>
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="info-box blue-bg">
+            <i class="fa fa-bullseye" aria-hidden="true"></i>
+            <div class="count">{{fitbit.steps}}</div>
+            <div class="title">Steps</div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="info-box lime-bg">
+            <i class="fa fa-apple" aria-hidden="true"></i>
+            <div class="count">{{fitbit.calories}}</div>
+            <div class="title">Calories</div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="info-box purple-bg">
+            <i class="fa fa-road" aria-hidden="true"></i>
+            <div class="count">{{fitbit.distance}}</div>
+            <div class="title"> miles</div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="info-box green-bg">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <div class="count">{{fitbit.activeminutes}}</div>
+            <div class="title">Active Minutes</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-md-6 col-lg-6 col-sm-6 card">
+        <h4><strong>Upcoming Appointments with {{currentAppointment["0"].fullname | uppercase}}</strong></h4>
+        <br>
+        <div class="row">
+            <div class="col card-data-padding" ng-if="currentAppointment != '' ">
+                <p><strong>Reason </strong> {{currentAppointment["0"].reason}}</p>
+                <p><strong>Did you have heart stroke before</strong> : {{currentAppointment["0"].stroke}}</p>
+                <p><strong>Current Medicine</strong> : {{currentAppointment["0"].currentMedicine}}</p>
+                <p><strong>Allergies</strong> : {{currentAppointment["0"].allergies}}</p>
+                <p><strong>Appointment date </strong> : {{currentAppointment["0"].date}}</p>
+            </div>
+                <center><p ng-if="currentAppointment == '' " class="pdng-top"><strong>No Upcoming Appointments for this Patient</strong></p></center>
+        </div>
+        <br><br>
+        <center><a ng-href="/viewAppointment/{{currentAppointment['0'].email}}/{{currentAppointment['0'].aid}}"><button class="btn btn-primary">View this Appointment</button></a>
+
+    </div>
+    <div class="col col-md-4 col-lg-4 sm-6 card ">
+        <h4><strong>Current Goals of {{currentAppointment["0"].fullname | uppercase}}</strong></h4>
+
+        <table class="tableCustom" ng-if="goals != '' ">
+            <tr>
+                <th>Goal</th>
+                <th>Values</th>
+            </tr>
+            <tr>
+                <td>Steps</td>
+                <td>{{goals["0"].goals_steps}}</td>
+            </tr>
+            <tr>
+                <td>Calories</td>
+                <td>{{goals["0"].goals_calories}}</td>
+            </tr>
+            <tr>
+                <td>Distance</td>
+                <td>{{goals["0"].goals_distance}} Miles</td>
+            </tr>
+            <tr>
+                <td>Active Minutes</td>
+                <td>{{goals["0"].goals_activeminutes}}</td>
+            </tr>
+        </table>
+        <center><p ng-if="goals == '' " class="pdng-top"><strong>No Goals Assigned for this user</strong></p></center>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-md-6 col-lg-6 col-sm-6 card ">
+        <h4><strong>Health Data of {{currentAppointment["0"].fullname | uppercase}}</strong></h4>
+        <br>
+        <div class="row">
+            <div class="col card-data-padding">
+                <form ng-if="health != '' ">
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Chest Pain Type</label>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <p ng-if="health['0'].chest_pain_type == '1'" class="form-control-static">Typical Angina</p>
+                            <p ng-if="health['0'].chest_pain_type == '2'" class="form-control-static">Atypical Angina</p>
+                            <p ng-if="health['0'].chest_pain_type == '3'" class="form-control-static">Non-anginal Pain</p>
+                            <p ng-if="health['0'].chest_pain_type == '4'" class="form-control-static">Asymptotic</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Resting Blood Pressure</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].resting_bp}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Serum Cholestrol</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].cholestrol}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Fasting blood sugar(>120mg/dl)</label>
+                        <div class="col-sm-1">
+                            <p ng-if="health['0'].blood_sugar == '0'"  class="form-control-static">No</p>
+                            <p ng-if="health['0'].blood_sugar == '1'"  class="form-control-static">Yes</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">ECG</label>
+                        <div class="col-sm-1">
+                            <p ng-if="health['0'].ecg == '0'" class="form-control-static">Normal</p>
+                            <p ng-if="health['0'].ecg == '1'" class="form-control-static">Abnormal</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Max Heart Rate</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].max_heart_rate}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">ST Depression</label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static">{{health["0"].induced_angina}}</p>
+                        </div>
+                    </div>
+                </form>
+                <center><p ng-if="health == '' " class="pdng-top"><strong>No Health Data present for this user</strong></p></center>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col col-md-4 col-lg-4 col-sm-6 card">
+        <h4><strong>Previous Appointments with {{currentAppointment["0"].fullname | uppercase}}</strong></h4>
+        <br>
+        <table class="tableCustom" ng-if="previousAppointment != '' ">
+            <tr>
+                <th>Appintment Id</th>
+                <th>Reason</th>
+                <th>Date</th>
+            </tr>
+            <tr ng-repeat="appointment in previousAppointment">
+                <td><a ng-href="/viewAppointment/{{appointment.email}}/{{appointment.aid}}">{{appointment.aid}}</a></td>
+                <td>{{appointment.reason}}</td>
+                <td>{{appointment.date}}</td>
+            </tr>
+        </table>
+        <center><p ng-if="previousAppointment == '' " class="pdng-top"><strong>No Previous Appointments for this user</strong></p></center>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col col-md-4 col-lg-3 col-sm-5 card">
+        <h4><strong>Personal data of {{currentAppointment["0"].fullname | uppercase}}</strong></h4>
+        <br>
+        <div class="row">
+            <div class="col card-data-padding">
+                <p><strong>Weight </strong> {{calulatedWeight}} Lb</p>
+                <p><strong>Height</strong> : {{profile["0"].height}} cms</p>
+                <p><strong>Gender </strong> : {{profile["0"].gender}}</p>
+                <p><strong>Age</strong> : {{profile["0"].age}}</p>
+            </div>
+        </div>
+    </div>
+</div>

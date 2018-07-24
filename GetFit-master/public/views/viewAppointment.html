@@ -1,0 +1,82 @@
+<h3>Appointment #{{appointmentId.aid}}</h3>
+
+
+<div class="row">
+    <div class="col col-md-6 col-lg-6 card card-margin">
+        <h4><strong>Appointment by {{appointmentId.fullname | uppercase}}</strong></h4>
+        <br>
+        <div class="row">
+            <div class="col card-data-padding">
+                <p><strong>Reason </strong> {{appointmentId.reason}}</p>
+                <p><strong>Did you have heart stroke before</strong> : {{appointmentId.stroke}}</p>
+                <p><strong>Current Medicine</strong> : {{appointmentId.currentMedicine}}</p>
+                <p><strong>Allergies</strong> : {{appointmentId.allergies}}</p>
+                <p><strong>Appointment date </strong> : {{appointmentId.date}}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="col col-md-4 col-lg-4 sm-6 card card-margin">
+        <h4><strong>Current Goals of {{appointmentId.fullname | uppercase}}</strong></h4>
+        
+        <div ng-show="success">
+            <button ng-click="edit()" class="right btn btn-success" ng-show ="showToday" style="float:right;" ng-if="goals != '' ">Edit</button><br>
+            <div ng-show="isShow">
+                <table class="tableCustom" ng-if="goals != '' ">
+                    <tr>
+                        <th>Goal</th>
+                        <th>Values</th>
+                    </tr>
+                    <tr>
+                        <td>Steps</td>
+                        <td>{{goals["0"].goals_steps}}</td>
+                    </tr>
+                    <tr>
+                        <td>Calories</td>
+                        <td>{{goals["0"].goals_calories}}</td>
+                    </tr>
+                    <tr>
+                        <td>Distance</td>
+                        <td>{{goals["0"].goals_distance}} Miles</td>
+                    </tr>
+                    <tr>
+                        <td>Active Minutes</td>
+                        <td>{{goals["0"].goals_activeminutes}}</td>
+                    </tr>
+                </table>
+                <center>
+                    <p ng-if="goals == '' " class="pdng-top"><strong>No Goals Assigned for this user</strong></p>
+                </center>
+            </div>
+            <div ng-show="!isShow">
+                <form ng-submit="updateGoals()">
+                    <div class="form-group row">
+                        <label><strong>Steps</strong></label>
+                        <input type="text" ng-model="dSteps" name="steps" class="form-control" id="steps" placeholder="Steps" required>
+                    </div>
+                    <div class="form-group row">
+                        <label><strong>Calories</strong></label>
+                        <input type="text" ng-model="dCalories" name="calories" class="form-control" id="calories" placeholder="Calories" required>
+                    </div>
+                    <div class="form-group row">
+                        <label><strong>Distance</strong></label>
+                        <input type="text" ng-model="dDistance" name="distance" class="form-control" id="distance" placeholder="Distance" required>
+                    </div>
+                    <div class="form-group row">
+                        <label><strong>Active Minutes</strong></label>
+                        <input type="text" ng-model="dActiveminutes" name="activeMinutes" class="form-control" id="activeMinutes" placeholder="Active Minutes"
+                            required>
+                    </div>
+                    <div class="form-group row">
+                        <label><strong>Feedback</strong></label>
+                        <input type="text" ng-model="feedback" name="feedback" class="form-control" id="feedback" placeholder="Feedback" required>
+                    </div>
+                    <center><button class="btn btn-danger" ng-click="edit()">Cancel</button>
+                        <button type="submit" id="submit" class="btn btn-success">Submit</button></center>
+                </form>
+            </div>
+        </div>
+        
+        <div ng-show="!success" style="color:green;"><center><hr>{{successText}}</center></div>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+<h3>Prediction</h3>
+<div class="row">
+    <div class="col col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-margin" style="min-width: 300px; height: 400px; height: 425px; margin: 0 auto">
+            <center>
+                <h3><strong> Heart Disease Prediction</strong></h3>
+                <div id="heart">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+                                    <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+                                    <path id="heart-path" fill-opacity="0" stroke-width="3" stroke="#ED6A5A" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+                    </svg>
+                    </div>
+                <div>Your predicted probability of heart disease is:</div><br>
+                <div id="donut"></div>
+            </center>
+        </div>
+    </div>
+    <div class="col col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-margin" style="min-width: 300px;height: 400px; height: 425px; margin: 0 auto">
+            <h3><strong>Heart Monitoring</strong></h3>
+            <center >
+                <table class="table table-responsive">
+                    <tr>
+                        <td></td>
+                        <td><strong>Heart Status</strong></td>
+                        <td><strong>Minutes in Status</strong></td>
+                    </tr>
+                    <tr ng-repeat="status in ctrl.heartstatus  track by $index">
+                        <td> <img ng-src="{{ctrl.img[$index]}}" alt="Description" height="50" width="50" /> </td>
+                        <td style="padding-top: 20px;">{{status}}</td>
+                        <td style="padding-top: 20px;">
+                            {{ctrl.minutes[$index]}}
+                        </td>
+                    </tr>
+                </table>
+            </center>
+            <hr>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-margin" style="min-width: 300px;height: 400px; height: 425px; margin: 0 auto">
+            <h3><strong>Provide Additional Information to Evaluate</strong></h3>
+            <form ng-submit="recommendation()">
+                <table class="table table-responsive">
+                    <tr>
+                        <td><label for="symptom1">Hyper Tension: </label></td>
+                        <td>
+                            <label style="color:green"><input type="radio" name="hyperTension" required>True</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label style="color:red"><input type="radio" name="hyperTension">False</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="symptom1">Is you age in between 18-85: </label></td>
+                        <td>
+                            <label style="color:green"><input type="radio" name="age" required>True</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label style="color:red"><input type="radio" name="age">False</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="symptom1">End Stage Renal Disease: </label></td>
+                        <td>
+                            <label style="color:green"><input type="radio" name="renalDisease" required>True</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label style="color:red"><input type="radio" name="renalDisease">False</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="symptom1">Chronic Kidney Disease: </label></td>
+                        <td>
+                            <label style="color:green"><input type="radio" name="kidneyDisease" required>True</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label style="color:red"><input type="radio" name="kidneyDisease">False</label>
+                        </td>
+                    </tr>
+
+                </table>
+                <hr>
+                <center><button type="submit" class="btn btn-primary">Get Recommendations</button></center>
+            </form>
+        </div>
+    </div>
+    <div class="col col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-margin" style="min-width: 300px;height: 400px; height: 425px; margin: 0 auto">
+            <h4><strong>Health Data</strong></h4>
+            <br>
+            <div class="row">
+                <div class="col card-data-padding">
+                    <form ng-if="health != '' ">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Chest Pain Type</label>
+                            <div class="col-sm-1">
+                                <p ng-if="health['0'].chest_pain_type == '1'" class="form-control-static">Typical Angina</p>
+                                <p ng-if="health['0'].chest_pain_type == '2'" class="form-control-static">Atypical Angina</p>
+                                <p ng-if="health['0'].chest_pain_type == '3'" class="form-control-static">Non-anginal Pain</p>
+                                <p ng-if="health['0'].chest_pain_type == '4'" class="form-control-static">Asymptotic</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Resting Blood Pressure</label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{health["0"].resting_bp}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Serum Cholestrol</label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{health["0"].cholestrol}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Fasting blood sugar(>120mg/dl)</label>
+                            <div class="col-sm-1">
+                                <p ng-if="health['0'].blood_sugar == '0'" class="form-control-static">No</p>
+                                <p ng-if="health['0'].blood_sugar == '1'" class="form-control-static">Yes</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">ECG</label>
+                            <div class="col-sm-1">
+                                <p ng-if="health['0'].ecg == '0'" class="form-control-static">Normal</p>
+                                <p ng-if="health['0'].ecg == '1'" class="form-control-static">Abnormal</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Max Heart Rate</label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{health["0"].max_heart_rate}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">ST Depression</label>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">{{health["0"].induced_angina}}</p>
+                            </div>
+                        </div>
+                    </form>
+                    <center>
+                        <p ng-if="health == '' " class="pdng-top"><strong>No Health Data present for this user</strong></p>
+                    </center>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

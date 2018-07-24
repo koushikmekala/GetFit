@@ -1,0 +1,29 @@
+<h3>All Appointments</h3>
+<div class="row top-space">
+    <div class="card card-margin col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <br>
+        <table class="tableCustom" ng-if="allAppointments != '' ">
+            <tr>
+                <th>Appointment Id</th>
+                <th>Reason</th>
+                <th>Date</th>
+                <th>Current Medicine</th>
+                <th>Allergies</th>
+                <th>Previous Stroke</th>
+                <th>Doctor Name</th>
+            </tr>
+            <tr ng-repeat="appointment in allAppointments">
+                <td><a ng-href="/viewAppointment/{{appointment.aid}}">{{appointment.aid}}</a></td>
+                <td>{{appointment.reason}}</td>
+                <td>{{appointment.date}}</td>
+                <td>{{appointment.currentMedicine}}</td>
+                <td>{{appointment.allergies}}</td>
+                <td>{{appointment.stroke}}</td>
+                <td>{{appointment.dFullname}}</td>
+                
+            </tr>
+        </table>
+        <center><p ng-if="allAppointments == '' " class="pdng-top"><strong>No Appointments for you</strong></p></center>
+
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<h3>View All Patients</h3>
+<ul class="pagination">
+    <li><button class="btn btn-secondary" ng-click="searchPatient('all')">All</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('a')">A</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('b')">B</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('c')">C</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('d')">D</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('e')">E</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('f')">F</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('g')">G</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('h')">H</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('i')">I</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('j')">J</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('k')">K</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('l')">L</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('m')">M</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('n')">N</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('o')">O</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('p')">P</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('q')">Q</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('r')">R</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('s')">S</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('t')">T</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('u')">U</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('v')">V</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('w')">W</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('x')">X</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('y')">Y</button></li>
+    <li><button class="btn btn-secondary" ng-click="searchPatient('z')">Z</button></li>
+</ul>
+
+<label>Search: <input ng-model="searchText"></label>
+<table class="tableCustom">
+    <tr>
+        <th>Name</th>
+         <th>Allergies</th>
+        <th>Stroke</th>
+        <th>Current Medicine</th>
+    </tr>
+    <tr ng-repeat="patient in patientsAll | filter:searchText">
+        <td><a ng-href="/viewPatientData/{{patient.email}}">{{patient.fullname}}</td>
+        <td>{{patient.allergies}}</td>
+        <td>{{patient.stroke}}</td>
+        <td>{{patient.currentMedicine}}</td>
+    </tr>
+</table>

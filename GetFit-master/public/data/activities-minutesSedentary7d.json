@@ -1,0 +1,32 @@
+{
+  "activities-minutesSedentary": [
+    {
+      "dateTime": "2017-04-27",
+      "value": "1047"
+    },
+    {
+      "dateTime": "2017-04-28",
+      "value": "990"
+    },
+    {
+      "dateTime": "2017-04-29",
+      "value": "1044"
+    },
+    {
+      "dateTime": "2017-04-30",
+      "value": "1086"
+    },
+    {
+      "dateTime": "2017-05-01",
+      "value": "1060"
+    },
+    {
+      "dateTime": "2017-05-02",
+      "value": "1427"
+    },
+    {
+      "dateTime": "2017-05-03",
+      "value": "464"
+    }
+  ]
+}

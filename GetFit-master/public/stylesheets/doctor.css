@@ -1,0 +1,49 @@
+.border-right{
+    border-right: 1px solid black;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    
+    padding: 8px;
+}
+
+.tableCustom tr:nth-child(even) {
+    background-color: lightblue;
+}
+
+.card-data-padding{
+    padding-left: 25px;
+}
+
+.info-card-padding{
+    padding-left: 25px;
+}
+
+.btn-margin-top{
+    margin-top: 8px;
+}
+
+.input-text{
+    width: 100%;
+    height:35px;
+    border-radius: 5px;
+    border: 1px solid green;
+}
+
+.patients ul{
+    padding-left: 0px;
+}
+
+.patients li{
+    padding: 3px;
+}
+
+.pdng-top{
+    padding-top:10px;
+}

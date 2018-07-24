@@ -1,0 +1,50 @@
+<h3>
+    Individual Activity Progress</h3>
+<div class="row">
+    <div class="row col-sm-12">
+
+        <div class="col-sm-offset-2 col-sm-3 col-sm-offset-1 card card-margin">
+            <center><img class="graph-img" src="../images/icons/distance.png" />
+                <svg id="distancesgauge" width="97%" height="250" ng-click="ctrl.distance.update();"></svg>
+                <h4><b>Distance</b></h4>
+            </center>
+        </div>
+
+        <div class="col-sm-offset-2 col-sm-3 col-sm-offset-1 card card-margin">
+            <center><img class="graph-img" src="../images/icons/steps.png" />
+                <svg id="stepsgauge" width="97%" height="250" ng-click="ctrl.stepgauge.update();"></svg>
+                <h4><b>Steps</b></h4>
+            </center>
+        </div>
+
+        <div class="col-sm-offset-2 col-sm-3 col-sm-offset-1 card card-margin">
+            <center><img class="graph-img" src="../images/icons/calories.png" />
+                <svg id="caloriesgauge" width="97%" height="250" ng-click="ctrl.calorie.update();"></svg>
+                <h4><b>Calories</b></h4>
+            </center>
+        </div>
+    </div>
+
+
+
+    <div class="row col-sm-12">
+
+        
+        <div class="col-sm-offset-2 col-sm-3 col-sm-offset-1 card card-margin">
+            <center><img class="graph-img" src="../images/icons/run.png" />
+                <svg id="exercisesgauge" width="97%" height="250" ng-click="ctrl.exercise.update();"></svg>
+                <h4><b>Exercise</b></h4>
+            </center>
+        </div>
+
+    </div>
+</div>
+
+<strong><hr></strong>
+
+<h3>Today's Overall Activity</h3>
+<div class="row col-sm-12">
+    <div class="col col-sm-offset-3 col-sm-6 col-sm-offset-3">
+        <div id="activity" style="width: 400px; height: 400px; margin: 0 auto"></div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="row top-space">
+    <div class="card card-margin col-sm-offset-2 col-sm-8 col-sm-offset-2">
+        <h3><strong><i class="fa fa-user" aria-hidden="true"></i> Additional User Details</strong></h3>
+        <div class="container">
+            <form ng-submit="ctrl.edituserdata()">
+               <div class="form-group">
+                    <label><strong>Age:</strong></label>
+                    <input type="text" ng-model="ctrl.user.age" name="age" class="form-control input-lg" id="age" placeholder="34"  required>
+                </div>
+                <div class="form-group">
+                    <label><strong>Gender:</strong></label>
+                    <input type="text" ng-model="ctrl.user.gender" name="gender" class="form-control input-lg" id="age" placeholder="Male/Female"  required>
+                </div>
+                <div class="form-group">
+                    <label for="chestpaintype"><strong>Chest Pain Type:</strong></label>
+                    <select class="form-control" id="chestpaintype" ng-model="ctrl.user.chestpaintype">
+                        <option value="1">Typical Angina</option>
+                        <option value="2">Atypical Angina</option>
+                        <option value="3">Non-aginal pain</option>
+                        <option value="4">Asymptotic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><strong>Resting Blood Pressure:</strong></label>
+                    <input type="text" ng-model="ctrl.user.restingbloodpressure" name="restingbloodpressure" class="form-control input-lg" id="restingbloodpressure"
+                        placeholder="140" required>
+                </div>
+                <div class="form-group">
+                    <label><strong>Serum Cholesterol:</strong></label>
+                    <input type="text" ng-model="ctrl.user.serumcholestrol" name="serumcholestrol" class="form-control input-lg" id="serumcholestrol" placeholder="229"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label><strong>Fasting blood sugar(>120mg/dl):</strong></label>
+                    <select class="form-control" id="fastingbloodsugar" ng-model="ctrl.user.fastingbloossugar">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="chestpaintype"><strong>ECG:</strong></label>
+                    <select class="form-control" id="chestpaintype" ng-model="ctrl.user.ecg">
+                        <option value="0">Normal</option>
+                        <option value="2">Abnormal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><strong>Max Heart Rate:</strong></label>
+                    <input type="text" ng-model="ctrl.user.maxheartrate" name="maxheartrate" class="form-control input-lg" id="maxheartrate" placeholder="109"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label><strong>Exercise Induced Angina/Emotion Stress:</strong></label>
+                    <select class="form-control" id="inducedangina" ng-model="ctrl.user.inducedangina">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                
+                <button type="submit" id="submit" class="btn btn-info btn-lg">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

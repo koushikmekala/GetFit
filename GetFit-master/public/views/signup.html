@@ -1,0 +1,45 @@
+<div class="row card card-margin  col-sm-9">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1><img src="../images/icons/user.png" height="50" width="50"> Signup</h1>
+
+        <!-- show any messages that come back with authentication -->
+        <div class="alert alert-danger" ng-if="error">{{ ctrl.error }}</div>
+
+        <!-- signup FORM -->
+        <form ng-submit="ctrl.signup()">
+            <div class="form-group">
+                <label><strong>First Name</strong></label>
+                <input type="text" ng-model="ctrl.firstname_signup" name="firstname" class="form-control input-lg" id="firstname_signup"
+                    placeholder="First name" required>
+            </div>
+            <div class="form-group">
+                <label><strong>Last Name</strong></label>
+                <input type="text" ng-model="ctrl.lastname_signup" name="lastname" class="form-control input-lg" id="lastname_signup" placeholder="Last name"
+                    required>
+            </div>
+            <div class="form-group">
+                <label><strong>Phone Number</strong></label>
+                <input type="tel" ng-model="ctrl.phone_signup" name="phone" class="form-control input-lg" id="phone_signup" placeholder="Phone"
+                    required>
+            </div>
+            <div class="form-group">
+                <label><strong>Email</strong></label>
+                <input type="email" ng-model="ctrl.email_signup" name="email" class="form-control input-lg" id="username_signup" placeholder="Email Address"
+                    required>
+            </div>
+            <div class="form-group">
+                <label><strong>Password</strong></label>
+                <input type="password" ng-model="ctrl.password_signup" name="password" class="form-control input-lg" id="username_signup"
+                    placeholder="Password" require>
+            </div>
+
+            <button type="submit" id="submit" class="btn btn-info btn-lg">Next Section <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+
+    </div>
+</div>

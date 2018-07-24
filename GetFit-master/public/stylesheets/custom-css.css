@@ -1,0 +1,94 @@
+.table th, .table td { 
+     border-top: none !important; 
+ }
+.pie-graph-big-circle{ 
+  fill: #c6c6c6
+}
+
+.pie-graph-small-circle{ 
+  fill: #ffffff
+}
+.card{
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(49,51,58,.2);
+    padding: 16px 32px;
+    background-color: white;
+    margin: 16px;
+    padding-bottom: 40px;
+    max-width: 100%;
+    color: black;
+    opacity: 0.9;
+   }
+
+.card-margin{
+    margin: 20px 20px 20px 40px;
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: #fff; /* Modern Browsers */
+}
+.bg-img {
+    background-image: url('../images/fitness.jpg');
+    background-repeat: no-repeat;
+}
+.graph-img{
+    height:65px;
+    width: 65px;
+}
+
+
+.primary{
+    margin: 16px;
+    width: 908px;
+}
+
+.secondary {
+    margin: 82px 16px 0 0;
+    width: 325px;
+    min-width: 240px;
+}
+
+.profile-seperator{
+    border-bottom: 1px solid #a0a8ba;
+    padding-bottom: 2px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right{
+    text-align: right;
+}
+
+.left{
+    text-align: left;
+}
+
+.top-space{
+    margin-top: 20px;
+}
+.glyphicon{
+    font-size: 25px;
+}
+.border-right{
+    border-right: 1px solid #a0a8ba;
+}
+
+.morris-graph{
+  width: 300px;
+  height:300px;
+}
+#donut {
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+#heart {
+  margin: 20px;
+  width: 50px;
+  height: 50px;
+}

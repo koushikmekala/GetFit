@@ -1,0 +1,146 @@
+<h3>Dashboard</h3>
+<div class="row">
+	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+		<div class="info-box blue-bg">
+			<i class="fa fa-bullseye" aria-hidden="true"></i>
+			<div class="count">{{dailyActivity["0"].steps}}</div>
+			<div class="title">Steps</div>
+		</div>
+		<!--/.info-box-->
+	</div>
+	<!--/.col-->
+
+	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+		<div class="info-box lime-bg">
+			<i class="fa fa-apple" aria-hidden="true"></i>
+			<div class="count">{{dailyActivity["0"].calories}}</div>
+			<div class="title">Calories</div>
+		</div>
+		<!--/.info-box-->
+	</div>
+	<!--/.col-->
+
+	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+		<div class="info-box purple-bg">
+			<i class="fa fa-road" aria-hidden="true"></i>
+			<div class="count">{{dailyActivity["0"].distance}}</div>
+			<div class="title"> miles</div>
+		</div>
+		<!--/.info-box-->
+	</div>
+	<!--/.col-->
+
+	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+		<div class="info-box green-bg">
+			<i class="fa fa-clock-o" aria-hidden="true"></i>
+			<div class="count">{{dailyActivity["0"].activeminutes}}</div>
+			<div class="title">Active Minutes</div>
+		</div>
+		<!--/.info-box-->
+	</div>
+	<!--/.col-->
+
+</div>
+<!--/.row-->
+
+<div class="row">
+	<div class="col col-md-6">
+		<div id="stepCount"></div>
+	</div>
+	<div class="col-6 col-md-6">
+		<div id="calories" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+	</div>
+</div><br>
+
+<div class="row">
+	<div class="col col-md-6">
+		<div id="activeDistance"></div>
+	</div>
+	<div class="col-6 col-md-6">
+		<div id="activeMinutes"></div>
+	</div>
+</div><br>
+
+<div class="row">
+	<div class="col col-md-6">
+		<div class="card card-margin" style="min-width: 300px; height: 425px; margin: 0 auto">
+			<center>
+				<h3><strong>BMI</strong></h3><img class="graph-img" src="../images/icons/heart.png" />
+				<p><strong><h3 ng-style="{ 'color': (ctrl.bmidisplay ? 'green' : 'red')}">{{ctrl.bmivalue}} </h3></strong></p>
+			</center>
+			<div class="row">
+				<div class="row profile-seperator">
+					<center>
+						<div class="row">
+							<p>Height:{{profile.height}} cm's</p>
+						</div>
+						<div class="row">
+							<!--<p>Wegiht:{{ctrl.weightinlb}} lb's</p>-->
+							<form editable-form name="editableForm" onaftersave="ctrl.updatebmi()">
+								<div>
+									<!-- editable username (text with validation) -->
+									<span class="title">Wegiht: </span>
+									<span editable-text="ctrl.weightinlb" e-name="weightinlb" e-required>{{ ctrl.weightinlb || 'empty' }} lbs</span>
+									<button type="button" class="btn btn-primary" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+												Edit
+											</button>
+									<!-- buttons to submit / cancel form -->
+									<span ng-show="editableForm.$visible">
+												<button type="submit" class="btn btn-success" ng-disabled="editableForm.$waiting">
+												Save
+												</button>
+												<button type="button" class="btn btn-danger" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+												Cancel
+												</button>
+											</span>
+								</div>
+							</form>
+						</div>
+					</center>
+				</div>
+				<div>
+					<center>
+						<table class="table table-responsive">
+							<tr>
+								<td>BMI Range</td>
+								<td>Classification</td>
+							</tr>
+							<tr class="danger">
+								<td>Less than 18.5 </td>
+								<td> Under Weight</td>
+							</tr>
+							<tr class="success">
+								<td>18.5 - 25 </td>
+								<td> Normal</td>
+							</tr>
+							<tr class="danger">
+								<td> Greater than 25 </td>
+								<td> Over Weight</td>
+							</tr>
+						</table>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col col-md-6">
+		<div class="card card-margin" style="min-width: 300px; height: 425px; margin: 0 auto">
+			<center>
+				<h3><strong>Average Daily Steps</strong></h3><img class="graph-img" src="../images/icons/steps2.png" />
+				<p><strong><h3 style="color:#35B9E0">{{profile.averageSteps}} steps</h3></strong></p>
+			<h4>Top Badges earned on Fitbit</h4></center>
+			<table class="table table-responsive">
+				<tr>
+					<td><img ng-src="{{profile.badge1Img}}" /></td>
+					<td> <img ng-src="{{profile.badge2Img}}" /></td>
+				</tr>
+				<tr>
+					<td>{{profile.badge1Des}} </td>
+					<td> {{profile.badge2Des}}</td>
+				</tr>
+
+			</table>
+
+		</div>
+	</div>
+</div>

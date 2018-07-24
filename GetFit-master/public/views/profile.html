@@ -1,0 +1,81 @@
+<h3>Profile</h3>
+<div class="row top-space">
+<div class="card card-margin col-sm-offset-2 col-sm-8 col-sm-offset-2">
+    <div class="container">
+        <div class="row">
+            <div class="col right">
+                <br>
+            </div>
+            <div class="col center">
+                <h3><b>{{profile.fname}} {{profile.lname}}</b></h3>
+            </div>
+            <div class="col">
+                <h3 class="col-sm-6 right border-right">{{profile.gender}}</h3>
+                <h3 class="col-sm-6 left">{{profile.age}}</h3>
+            </div>
+            <div class="col-sm-offset-1 col-sm-10">
+                <div class="row profile-seperator">
+                    <div class="col-sm-1">
+                        <h4><img src="../images/icons/email.png" height="30" width="30"></h4>
+                    </div>
+                    <div class="col-sm-offset-1 col-sm-3">
+                        <h4>Email</h4>
+                    </div>
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <h4>{{profile.email}}</h4>
+                    </div>
+                </div>
+
+
+                <div class="row profile-seperator">
+                    <div class="col-sm-1">
+                       <h4><img src="../images/icons/phone.png" height="30" width="30"><h4>
+                    </div>
+                    <div class="col-sm-offset-1 col-sm-3">
+                        <h4>Phone</h4>
+                    </div>
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <h4>{{profile.phone}}</h4>
+                    </div>
+                </div>
+
+                <div class="row profile-seperator">
+                    <div class="col-sm-1">
+                       <h4><img src="../images/icons/fitbitdevice.png" height="30" width="30"><h4>
+                    </div>
+                    <div class="col-sm-offset-1 col-sm-3">
+                        <h4>Fitbit User Id</h4>
+                    </div>
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <h4>{{profile.userId}}</h4>
+                    </div>
+                </div>
+
+                <div class="row profile-seperator">
+                    <div class="col-sm-1">
+                       <h4><img src="../images/icons/weight.png" height="30" width="30"><h4>
+                    </div>
+                    <div class="col-sm-offset-1 col-sm-3">
+                        <h4>Weight</h4>
+                    </div>
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <h4>{{calulatedWeight}} lbs</h4>
+                    </div>
+                </div>
+
+                <div class="row profile-seperator">
+                    <div class="col-sm-1">
+                       <h4><img src="../images/icons/height.png" height="30" width="30"><h4>
+                    </div>
+                    <div class="col-sm-offset-1 col-sm-3">
+                        <h4>Height</h4>
+                    </div>
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <h4>{{profile.height}} cms</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "activities-minutesFairlyActive": [
+    {
+      "dateTime": "2017-04-27",
+      "value": "10"
+    },
+    {
+      "dateTime": "2017-04-28",
+      "value": "0"
+    },
+    {
+      "dateTime": "2017-04-29",
+      "value": "13"
+    },
+    {
+      "dateTime": "2017-04-30",
+      "value": "0"
+    },
+    {
+      "dateTime": "2017-05-01",
+      "value": "0"
+    },
+    {
+      "dateTime": "2017-05-02",
+      "value": "0"
+    },
+    {
+      "dateTime": "2017-05-03",
+      "value": "0"
+    }
+  ]
+}
